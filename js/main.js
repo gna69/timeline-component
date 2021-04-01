@@ -4,6 +4,9 @@ const timelineHeight = document.querySelector('.timeline').dataset.height;
 window.onscroll = () => handlerScroll();
 
 const handlerScroll = () => {
-    timeline.style.height = window.scrollY + '%';
-    console.log(1);
+    if(window.scrollY >= timelineHeight) {
+        timeline.style.height = timelineHeight + 'px';
+    } else {
+        timeline.style.height = window.scrollY + 'px';
+    }
 }
